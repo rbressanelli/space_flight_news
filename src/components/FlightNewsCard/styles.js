@@ -1,28 +1,38 @@
 import { styled } from "@material-ui/system";
 import { Grid, Paper } from "@material-ui/core";
 
-export const NewGrid = styled(Grid)({
-  width: "300px",
-  textAlign:'center',
 
-  "& figure": {
-    margin: 0,
+export const TitleGrid = styled(Grid)({
+  margin: '0 auto',
+
+  "& div": {
+    width: 250,
   },
 
+  "& p": {    
+    fontSize: '16px',     
+    textAlign: 'justify',   
+  }
+})
+
+export const ImgGrid = styled(Grid)({  
+  textAlign:'center', 
+
   "& img": {
-    width: "150px",
-    height: "150px",
-    objectFit: "contain",
+    width: "200px",
+    height: "200px",
+    objectFit: "cover",
+    borderRadius: '10px',
+    marginTop: '15%',
+    
   },
 });
 
 export const Title = styled("h1")({
   fontSize: "18px",
   textAlign: 'justify',
-  overflow: 'auto',
-  textOverflow: 'ellipsis',
-  display: '-webkit-box',
-});
+  width: 250,
+   });
 
 export const Div = styled("div")({
   height: 20,
@@ -30,18 +40,19 @@ export const Div = styled("div")({
   justifyContent: 'space-around',
 
   "& p": {
-    margin: 0
+    margin: 0,
+    
   }
 })
 
 export const CardPaper = styled(Paper)({
   margin: '0 auto',
-  width: 280,
   padding: 10,
+  width: '100%',
+  
 })
 
-export const theme = {
-  width: 300,
+export const style = {  
   p: 1,  
-  m: 1,  
+  justifyContent: 'center'  
 };
