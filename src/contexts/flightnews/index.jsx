@@ -25,9 +25,12 @@ export const FlightNewsProvider = ({ children }) => {
     }
   }, [pagination]);
 
-  const changePage = () => {
-    setPagination(pagination + 10);
-    console.log(pagination);
+  const changePage = (flag) => {
+    if (flag){
+      setPagination(pagination + 10);
+    } else if (!flag && pagination > 0){
+      setPagination(pagination - 10)
+    }    
   };
 
   useEffect(() => {
