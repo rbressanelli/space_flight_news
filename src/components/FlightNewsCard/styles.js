@@ -7,11 +7,13 @@ export const TitleGrid = styled(Grid)({
 
   "& div": {
     width: 250,
+    textAlign: 'center'
   },
 
   "& p": {    
     fontSize: '16px',     
-    textAlign: 'justify',   
+    textAlign: 'justify',
+    scroll: 'auto'   
   }
 })
 

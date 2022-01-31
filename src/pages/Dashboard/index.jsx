@@ -6,18 +6,21 @@ import PageviewIcon from "@mui/icons-material/Pageview";
 import { TextField } from "@material-ui/core";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useState } from "react";
+import NewsModal from "../../components/NewsModal";
 
 const Dashboard = () => {
   const { changePage } = useFlightNews();
 
   const [newsSearch, setNewsSearch] = useState("");
   const [foundedNews, setFoundedNews] = useState("");
-  const [changeIcon, setChangeIcon] = useState(false)
+  const [changeIcon, setChangeIcon] = useState(false); 
+  const [open, setOpen] = useState(false);
+  const [data, setData] = useState([])
 
   const handleSearch = (e) => {
     if(newsSearch.length > 0){
       setFoundedNews(e)
-    setChangeIcon(true)
+      setChangeIcon(true)
     }    
   };
 
@@ -25,6 +28,11 @@ const Dashboard = () => {
     setNewsSearch('')
     setFoundedNews(null)
     setChangeIcon(false)
+  }
+
+  const handleModal = (data, ) => {
+    setOpen(true)
+    setData(data)
   }
 
   return (
@@ -73,7 +81,8 @@ const Dashboard = () => {
           mais novas
         </NewsButton>
       </div>
-      <FlightNewsList filterSearch={foundedNews} />
+      <FlightNewsList filterSearch={foundedNews} handleModal={handleModal} />
+      <NewsModal open={open} data={data} setOpen={setOpen}/>
     </Main>
   );
 };

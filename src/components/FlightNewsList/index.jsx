@@ -3,7 +3,7 @@ import { useFlightNews } from "../../contexts/flightnews";
 import FlightNewsCard from "../FlightNewsCard";
 import { style } from "./styles";
 
-const FlightNewsList = ({ filterSearch }) => {
+const FlightNewsList = ({ filterSearch, handleModal }) => {
   const { flightList } = useFlightNews();
 
   return (
@@ -15,7 +15,7 @@ const FlightNewsList = ({ filterSearch }) => {
           )
           .map((news) => (
             <Container sx={style} key={news.id.toString()}>
-              <FlightNewsCard flightNews={news} />
+              <FlightNewsCard flightNews={news} handleModal={handleModal} />
             </Container>
           ))}
     </>
