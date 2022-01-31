@@ -9,8 +9,8 @@ export const style = {
     laptop: 800,
   }, 
   bgcolor: "background.paper",
-  border: "2px solid #302E53",
-  borderRadius: "10px",
+  border: "3px solid #302E53",
+  borderRadius: "20px",
   boxShadow: 24,
   p: {
     xs: 1,
