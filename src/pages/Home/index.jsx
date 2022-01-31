@@ -1,17 +1,32 @@
-import { Button } from "@material-ui/core";
+import { Button, Grid } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
+import { style } from "./styles";
+
 
 const Home = () => {
-
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
-    <main>
-      <h1>HOME</h1>
-      <Button onClick={() => navigate('/dashboard')} variant="contained">
-        Dashboard
-      </Button>
-    </main>
+    <Grid
+      container
+      sx={style}
+    >
+      <Grid
+        item
+        xs={12}
+        sx={{
+          minWidth: 200,
+        }}
+      >
+        <Button
+          onClick={() => navigate("/dashboard")}
+          variant="contained"
+          fullWidth
+        >
+          Enter
+        </Button>
+      </Grid>
+    </Grid>
   );
 };
 
