@@ -8,6 +8,10 @@ export const theme = createTheme({
     secondary: {
       main: "#302E53",
     },
+
+    blackPearl: {
+      main: '#1e2022',
+    },
   },
 
   breakpoints: {
@@ -18,4 +22,9 @@ export const theme = createTheme({
       desktop: 1200,
     },
   },
+
+  color: {
+    red: '#f00',
+  }
+
 });
