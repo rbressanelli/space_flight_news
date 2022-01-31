@@ -40,9 +40,10 @@ const Dashboard = () => {
                   onClick={() => handleSearch(newsSearch)}
                   color="primary"
                   fontSize="large"
+                  sx={{'&:hover':{color: '#302E53', cursor: 'pointer'}}}
                 />
               ) : (
-                <ClearIcon onClick={() => handleClear()} color="primary" fontSize="large" />
+                <ClearIcon onClick={() => handleClear()} color="primary" fontSize="large" sx={{'&:hover':{color: '#302E53', cursor: 'pointer'}}} />
               )}
             </InputAdornment>
           ),
