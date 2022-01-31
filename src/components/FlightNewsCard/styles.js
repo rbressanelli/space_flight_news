@@ -35,7 +35,7 @@ export const Title = styled("h1")({
    });
 
 export const Div = styled("div")({
-  height: 20,
+  height: 25,
   display: 'flex',
   justifyContent: 'space-around',
 

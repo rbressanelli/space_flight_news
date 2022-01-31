@@ -1,8 +1,11 @@
 import { Button, Grid } from "@material-ui/core";
 import { CardPaper, Div, ImgGrid, style, Title, TitleGrid } from "./styles";
 import format from "date-fns/format";
+import { Link } from "react-router-dom";
 
 const FlightNewsCard = ({ flightNews }) => {
+  const handleNewsSite = () => {};
+
   return (
     <>
       <Grid sx={style} container>
@@ -10,7 +13,13 @@ const FlightNewsCard = ({ flightNews }) => {
           <Title>{flightNews.title}</Title>
           <Div>
             <p>{format(new Date(flightNews.publishedAt), "dd-MM-yyyy")}</p>
-            <Button variant="contained" color="primary" size="small">
+
+            <Button
+              href={flightNews.url}
+              variant="contained"
+              color="primary"
+              size="small"
+            >
               news site
             </Button>
           </Div>
