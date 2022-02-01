@@ -8,18 +8,18 @@ const NewsModal = ({ open, data, setOpen }) => {
 
   return (
     <>
-      <Modal
+      <Modal        
         closeAfterTransition
         open={open}
-        onClose={handleClose}
+        onClose={handleClose}        
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 1000,
         }}
       >
         <Fade in={open}>
-          <Box sx={style}>
-            <FlightNewsCard flightNews={data} isOpen={open} />
+          <Box sx={style} >
+            <FlightNewsCard flightNews={data} isOpen={open} index='3' />
           </Box>
         </Fade>
       </Modal>

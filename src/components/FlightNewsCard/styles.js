@@ -4,22 +4,19 @@ import { Grid, Paper } from "@material-ui/core";
 
 export const TitleGrid = styled(Grid)({
   margin: '0 auto',
-
-  "& div": {
-    width: 250,
-    textAlign: 'center'
-  },
+  flexDirection: {mobile: 'column', tablet: 'row'},  
 
   "& p": {    
-    fontSize: '16px',     
+    fontSize: '1rem',     
     textAlign: 'justify',
     scroll: 'auto'   
   }
 })
 
 export const ImgGrid = styled(Grid)({  
-  textAlign:'center', 
-
+  textAlign:'center',
+  
+  
   "& img": {
     width: "200px",
     height: "200px",
@@ -31,9 +28,9 @@ export const ImgGrid = styled(Grid)({
 });
 
 export const Title = styled("h1")({
-  fontSize: "18px",
+  fontSize: "1.1rem",
   textAlign: 'justify',
-  width: 250,
+  // width: 250,
    });
 
 export const Div = styled("div")({
@@ -43,18 +40,31 @@ export const Div = styled("div")({
 
   "& p": {
     margin: 0,
-    
+    width: 150,
   }
 })
 
-export const CardPaper = styled(Paper)({
-  margin: '0 auto',
-  padding: 10,
-  width: '100%',
-  
-})
-
 export const style = {  
-  p: 1,  
-  justifyContent: 'center'  
+  p: {
+    mobile: 1,
+    tablet: 2
+  },  
+  
+  margin: '0 auto',
+  width: {
+    mobile: 260,
+    tablet: '100%'
+  }, 
+  borderRadius: '6px',
+  boxShadow: '0 0 25px -10px #1e2022'
 };
+
+export const boxStyle = {
+  width: {
+    mobile: 250,
+    tablet: 350
+  },
+  "& p": {
+    width: 260,
+  }
+}

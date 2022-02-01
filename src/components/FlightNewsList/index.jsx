@@ -13,9 +13,9 @@ const FlightNewsList = ({ filterSearch, handleModal }) => {
           .filter((news) =>
             filterSearch ? news.title.toLowerCase().includes(filterSearch.toLowerCase()) : flightList
           )
-          .map((news) => (
+          .map((news, index) => (
             <Container sx={style} key={news.id.toString()}>
-              <FlightNewsCard flightNews={news} handleModal={handleModal} />
+              <FlightNewsCard flightNews={news} handleModal={handleModal} index={index} />
             </Container>
           ))}
     </>
