@@ -1,6 +1,7 @@
 import { Button, Grid } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 import { style } from "./styles";
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
           onClick={() => navigate("/dashboard")}
           variant="contained"
           fullWidth
+          endIcon={<RocketLaunchIcon />}
         >
           Enter
         </Button>
