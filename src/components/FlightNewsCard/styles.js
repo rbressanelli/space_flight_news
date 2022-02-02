@@ -52,8 +52,8 @@ export const style = {
     tablet: "100%",
   },
   borderRadius: "10px",
-  borderTop: "2px solid #ccc",
-  borderBottom: "2px solid #ccc",
+  borderTop: "1px solid #eee",
+  borderBottom: "1px solid #eee",
 };
 
 export const boxStyle = {

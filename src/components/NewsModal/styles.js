@@ -1,6 +1,5 @@
 export const style = {
-  display: "flex",
-  alignItems: "center",
+  display: "flex", 
   position: "absolute",
   top: "50%",
   left: "50%",
@@ -11,7 +10,7 @@ export const style = {
     laptop: 800,
   },
 
-  maxHeight: "90%",
+  maxHeight: '90%',
   bgcolor: "background.paper",
   border: "3px solid #302E53",
   borderRadius: "5px",
@@ -21,7 +20,7 @@ export const style = {
     tablet: 3,
   },
 
-  overflowY: "auto",
+  overflow: "auto",
   margin: 0,
   padding: 0,
   listStyle: "none",
