@@ -13,8 +13,8 @@ const FlightNewsContext = createContext();
 export const FlightNewsProvider = ({ children }) => {
   const [flightList, setFlightList] = useState([]);
   const [pagination, setPagination] = useState(0);
-  const [ limitation, setLimitation ] = useState(10);
-  const [ sorted, setSorted ] = useState(false);
+  const [limitation, setLimitation] = useState(10);
+  const [sorted, setSorted] = useState(false);
 
   const getNewsFromApi = useCallback(async () => {
     try {
@@ -28,37 +28,35 @@ export const FlightNewsProvider = ({ children }) => {
   }, [pagination, limitation]);
 
   const changePage = (flag) => {
-    if (flag){
+    if (flag) {
       setPagination(pagination + 10);
-    } else if (!flag && pagination > 0){
-      setPagination(pagination - 10) 
-       
+    } else if (!flag && pagination > 0) {
+      setPagination(pagination - 10);
     }
-    if(!flag && pagination < 20){
-        setLimitation(10)
-      }             
+    if (!flag && pagination < 20) {
+      setLimitation(10);
+    }
   };
- 
-  const moreNews = () => {
-    setLimitation(limitation + 10)    
-  }
 
-  const sortNews = () => {    
-    setSorted(!sorted)
-  }
+  const moreNews = () => {
+    setLimitation(limitation + 10);
+  };
+
+  const sortNews = () => {
+    setSorted(!sorted);
+  };
 
   useEffect(() => {
     getNewsFromApi();
   }, [getNewsFromApi]);
-  
-  
+
   const contextValue = {
     flightList,
     getNewsFromApi,
     changePage,
     moreNews,
     sortNews,
-    sorted
+    sorted,
   };
 
   return (

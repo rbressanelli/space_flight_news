@@ -1,16 +1,17 @@
-import FlightNewsList from "../../components/FlightNewsList";
-import { useFlightNews } from "../../contexts/flightnews";
-import { NewsButton, GridStyle, RocketDiv, hoverColor } from "./styles";
-import InputAdornment from "@mui/material/InputAdornment";
-import PageviewIcon from "@mui/icons-material/Pageview";
-import { Box, Button, Grid, TextField } from "@material-ui/core";
-import ClearIcon from "@mui/icons-material/Clear";
 import { useState } from "react";
-import NewsModal from "../../components/NewsModal";
+import ClearIcon from "@mui/icons-material/Clear";
+import PageviewIcon from "@mui/icons-material/Pageview";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-import Crop54TwoToneIcon from '@mui/icons-material/Crop54TwoTone';
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import Crop54TwoToneIcon from "@mui/icons-material/Crop54TwoTone";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import InputAdornment from "@mui/material/InputAdornment";
+import { Box, Button, Grid, TextField } from "@material-ui/core";
+
+import NewsModal from "../../components/NewsModal";
+import { useFlightNews } from "../../contexts/flightnews";
+import FlightNewsList from "../../components/FlightNewsList";
+import { NewsButton, GridStyle, RocketDiv, hoverColor } from "./styles";
 
 const Dashboard = () => {
   const { changePage, moreNews, sortNews, sorted } = useFlightNews();
@@ -40,25 +41,29 @@ const Dashboard = () => {
   };
 
   const handleMoreNews = () => {
-    moreNews()
-  }
+    moreNews();
+  };
 
   return (
     <Grid sx={GridStyle}>
-      <Grid item mobile={12} tablet={8} sx={{ margin: "0 auto", position: 'relative' }}>
+      <Grid
+        item
+        mobile={12}
+        tablet={8}
+        sx={{ margin: "0 auto", position: "relative" }}
+      >
         <Box
           sx={{
             display: "flex",
             flexDirection: { mobile: "column", tablet: "row" },
             maxWidth: 400,
-            margin: '0 auto',
-            position: {tablet: 'absolute'},
-            right: {tablet: 0},
-            
+            margin: "0 auto",
+            position: { tablet: "absolute" },
+            right: { tablet: 0 },
           }}
         >
           <TextField
-            sx={{margin: {mobile: '0 0 10px', tablet: '0 10px'}}}
+            sx={{ margin: { mobile: "0 0 10px", tablet: "0 10px" } }}
             size="small"
             placeholder="Search"
             InputProps={{
@@ -139,12 +144,27 @@ const Dashboard = () => {
         <FlightNewsList filterSearch={foundedNews} handleModal={handleModal} />
         <NewsModal open={open} data={data} setOpen={setOpen} />
       </Grid>
-      <Grid  sx={{textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 5}}>
+      <Grid
+        sx={{
+          textAlign: "center",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginTop: 5,
+        }}
+      >
         <Crop54TwoToneIcon />
         <Crop54TwoToneIcon />
         <Crop54TwoToneIcon />
-        <Button onClick={() => handleMoreNews()} sx={{marginTop: 8, width: 100}} color="secondary" variant="outlined" >mais</Button>
-      </Grid>        
+        <Button
+          onClick={() => handleMoreNews()}
+          sx={{ marginTop: 8, width: 100 }}
+          color="secondary"
+          variant="outlined"
+        >
+          mais
+        </Button>
+      </Grid>
     </Grid>
   );
 };

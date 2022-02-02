@@ -1,6 +1,5 @@
 import { styled } from "@material-ui/system";
 import { Button } from "@material-ui/core";
-import { theme } from "../../styles/theme";
 
 export const Main = styled("main")({
   padding: "10px",
@@ -13,7 +12,6 @@ export const NewsButton = styled(Button)({
 });
 
 export const GridStyle = {
-  // width: { mobile: 300, tablet: 500 },
   p: 2,
   justifyContent: "center",
   maxWidth: 1000,

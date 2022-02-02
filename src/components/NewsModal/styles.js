@@ -1,6 +1,6 @@
 export const style = {
-  display: 'flex',
-  alignItems: 'center',
+  display: "flex",
+  alignItems: "center",
   position: "absolute",
   top: "50%",
   left: "50%",
@@ -9,9 +9,9 @@ export const style = {
     mobile: 300,
     tablet: 600,
     laptop: 800,
-  },   
-  
-  maxHeight: '90%',
+  },
+
+  maxHeight: "90%",
   bgcolor: "background.paper",
   border: "3px solid #302E53",
   borderRadius: "5px",
@@ -24,20 +24,19 @@ export const style = {
   overflowY: "auto",
   margin: 0,
   padding: 0,
-  listStyle: "none",  
-  '&::-webkit-scrollbar': {
-    width: '0.4em',    
+  listStyle: "none",
+  "&::-webkit-scrollbar": {
+    width: "0.4em",
   },
-  '&::-webkit-scrollbar-track': {
-    boxShadow: 'inset 0 0 6px #D07017',    
+  "&::-webkit-scrollbar-track": {
+    boxShadow: "inset 0 0 6px #D07017",
   },
-  '&::-webkit-scrollbar-thumb': {
-    backgroundColor: '#D07017',
-    outline: '1px solid #302E53',    
-    borderRadius: '10px',    
-     '&:hover': {
-      backgroundColor: 'rgba(208,112,23,0.7)',
-    }
+  "&::-webkit-scrollbar-thumb": {
+    backgroundColor: "#D07017",
+    outline: "1px solid #302E53",
+    borderRadius: "10px",
+    "&:hover": {
+      backgroundColor: "rgba(208,112,23,0.7)",
+    },
   },
-  
-}
+};
