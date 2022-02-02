@@ -13,7 +13,8 @@ const FlightNewsContext = createContext();
 export const FlightNewsProvider = ({ children }) => {
   const [flightList, setFlightList] = useState([]);
   const [pagination, setPagination] = useState(0);
-  const [ limitation, setLimitation ] = useState(10)
+  const [ limitation, setLimitation ] = useState(10);
+  const [ sorted, setSorted ] = useState(false);
 
   const getNewsFromApi = useCallback(async () => {
     try {
@@ -42,6 +43,10 @@ export const FlightNewsProvider = ({ children }) => {
     setLimitation(limitation + 10)    
   }
 
+  const sortNews = () => {    
+    setSorted(!sorted)
+  }
+
   useEffect(() => {
     getNewsFromApi();
   }, [getNewsFromApi]);
@@ -51,7 +56,9 @@ export const FlightNewsProvider = ({ children }) => {
     flightList,
     getNewsFromApi,
     changePage,
-    moreNews
+    moreNews,
+    sortNews,
+    sorted
   };
 
   return (

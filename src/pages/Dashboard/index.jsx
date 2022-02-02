@@ -11,7 +11,7 @@ import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import Crop54TwoToneIcon from '@mui/icons-material/Crop54TwoTone';
 
 const Dashboard = () => {
-  const { changePage, moreNews } = useFlightNews();
+  const { changePage, moreNews, sortNews } = useFlightNews();
 
   const [newsSearch, setNewsSearch] = useState("");
   const [foundedNews, setFoundedNews] = useState("");
@@ -91,7 +91,7 @@ const Dashboard = () => {
           />
           <div>
             <NewsButton
-              onClick={null}
+              onClick={() => sortNews()}
               variant="contained"
               fullWidth
               sx={{
