@@ -12,7 +12,7 @@ import NewsModal from "../../components/NewsModal";
 import { useFlightNews } from "../../contexts/flightnews";
 import FlightNewsList from "../../components/FlightNewsList";
 import MoreNews from "../../components/MoreNews";
-import { NewsButton, GridStyle, RocketDiv, hoverColor } from "./styles";
+import { NewsButton, GridStyle, RocketDiv, hoverColor, textAreaIconsHover } from "./styles";
 
 const Dashboard = () => {
   const { changePage, moreNews, sortNews, sorted } = useFlightNews();
@@ -74,18 +74,14 @@ const Dashboard = () => {
                       onClick={() => handleSearch(newsSearch)}
                       color="primary"
                       fontSize="large"
-                      sx={{
-                        "&:hover": { color: "#302E53", cursor: "pointer" },
-                      }}
+                      sx={textAreaIconsHover}
                     />
                   ) : (
                     <ClearIcon
                       onClick={() => handleClear()}
                       color="primary"
                       fontSize="large"
-                      sx={{
-                        "&:hover": { color: "#302E53", cursor: "pointer" },
-                      }}
+                      sx={textAreaIconsHover}
                     />
                   )}
                 </InputAdornment>
