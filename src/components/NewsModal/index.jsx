@@ -1,6 +1,6 @@
-import { Box, Fade, Modal } from "@material-ui/core";
+import { Box, Fade, Modal, Backdrop } from "@material-ui/core";
+
 import FlightNewsCard from "../FlightNewsCard";
-import { Backdrop } from "@material-ui/core";
 import { style } from "./styles";
 
 const NewsModal = ({ open, data, setOpen }) => {
@@ -8,18 +8,18 @@ const NewsModal = ({ open, data, setOpen }) => {
 
   return (
     <>
-      <Modal        
+      <Modal
         closeAfterTransition
         open={open}
-        onClose={handleClose}        
+        onClose={handleClose}
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 1000,
         }}
       >
         <Fade in={open}>
-          <Box sx={style} >
-            <FlightNewsCard flightNews={data} isOpen={open} index='3' />
+          <Box sx={style}>
+            <FlightNewsCard flightNews={data} isOpen={open} index="3" />
           </Box>
         </Fade>
       </Modal>

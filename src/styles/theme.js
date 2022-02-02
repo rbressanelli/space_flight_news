@@ -10,7 +10,7 @@ export const theme = createTheme({
     },
 
     blackPearl: {
-      main: '#1e2022',
+      main: "#1e2022",
     },
   },
 
@@ -22,9 +22,4 @@ export const theme = createTheme({
       desktop: 1200,
     },
   },
-
-  color: {
-    red: '#f00',
-  }
-
 });

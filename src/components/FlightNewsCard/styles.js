@@ -1,5 +1,5 @@
 import { styled } from "@material-ui/system";
-import { Grid, Paper } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 export const TitleGrid = styled(Grid)({
   margin: "0 auto",
@@ -27,7 +27,6 @@ export const ImgGrid = styled(Grid)({
 export const Title = styled("h1")({
   fontSize: "1.1rem",
   textAlign: "justify",
-  // width: 250,
 });
 
 export const Div = styled("div")({
