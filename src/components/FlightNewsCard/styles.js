@@ -45,10 +45,9 @@ export const style = {
     mobile: 1,
     tablet: 2,
   },
-
-  margin: "0 auto",
+  
   width: {
-    mobile: 260,
+    mobile: 300,
     tablet: "100%",
   },
   borderRadius: "10px",
