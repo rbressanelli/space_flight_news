@@ -42,3 +42,10 @@ export const hoverColor = {
     backgroundColor: "#302E53",
   },
 };
+
+export const textAreaIconsHover = {
+  "&:hover": {
+    color: "#302E53",
+    cursor: "pointer",
+  },
+};

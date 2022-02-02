@@ -23,15 +23,12 @@ const MoreNews = () => {
         >
           <Button
             onClick={() => handleMoreNews()}
-            sx={{ margin: 5, width: 150 }}
+            sx={{ width: 150 }}
             color="secondary"
             variant="outlined"
           >
             mais
-          </Button>
-          <Crop54TwoToneIcon />
-          <Crop54TwoToneIcon />
-          <Crop54TwoToneIcon />
+          </Button>          
         </Grid>
       ) : (
         <Grid
