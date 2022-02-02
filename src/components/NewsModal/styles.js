@@ -10,14 +10,11 @@ export const style = {
     tablet: 600,
     laptop: 800,
   },   
-  height: {
-    mobile: '90%',
-    tablet: '60%'
-  },
-  maxHeight: 500,
+  
+  maxHeight: '90%',
   bgcolor: "background.paper",
   border: "3px solid #302E53",
-  borderRadius: "20px",
+  borderRadius: "5px",
   boxShadow: 24,
   p: {
     mobile: 1,
