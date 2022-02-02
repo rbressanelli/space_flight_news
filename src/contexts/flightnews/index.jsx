@@ -27,13 +27,17 @@ export const FlightNewsProvider = ({ children }) => {
     }
   }, [pagination, limitation]);
 
-  const changePage = (flag) => {
+  const getOlderNews = (flag) => {
     if (flag) {
       setPagination(pagination + 10);
-    } else if (!flag && pagination > 0) {
+    }
+  };
+
+  const getNewerNews = () => {
+    if (pagination > 0) {
       setPagination(pagination - 10);
     }
-    if (!flag && pagination < 20) {
+    if (pagination < 20) {
       setLimitation(10);
     }
   };
@@ -53,7 +57,8 @@ export const FlightNewsProvider = ({ children }) => {
   const contextValue = {
     flightList,
     getNewsFromApi,
-    changePage,
+    getOlderNews,
+    getNewerNews,
     moreNews,
     sortNews,
     sorted,

@@ -3,10 +3,9 @@ import ClearIcon from "@mui/icons-material/Clear";
 import PageviewIcon from "@mui/icons-material/Pageview";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-import Crop54TwoToneIcon from "@mui/icons-material/Crop54TwoTone";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import InputAdornment from "@mui/material/InputAdornment";
-import { Box, Button, Grid, TextField } from "@material-ui/core";
+import { Box, Grid, TextField } from "@material-ui/core";
 
 import NewsModal from "../../components/NewsModal";
 import { useFlightNews } from "../../contexts/flightnews";
@@ -15,7 +14,7 @@ import MoreNews from "../../components/MoreNews";
 import { NewsButton, GridStyle, RocketDiv, hoverColor, textAreaIconsHover } from "./styles";
 
 const Dashboard = () => {
-  const { changePage, moreNews, sortNews, sorted } = useFlightNews();
+  const { sortNews, sorted, getOlderNews, getNewerNews } = useFlightNews();
 
   const [newsSearch, setNewsSearch] = useState("");
   const [foundedNews, setFoundedNews] = useState("");
@@ -23,20 +22,20 @@ const Dashboard = () => {
   const [open, setOpen] = useState(false);
   const [data, setData] = useState([]);
 
-  const handleSearch = (e) => {
+  const handleSearchNews = (e) => {
     if (newsSearch.length > 0) {
       setFoundedNews(e);
       setChangeIcon(true);
     }
   };
 
-  const handleClear = () => {
+  const handleClearSearchField = () => {
     setNewsSearch("");
     setFoundedNews(null);
     setChangeIcon(false);
   };
 
-  const handleModal = (data) => {
+  const handleOpenModal = (data) => {
     setOpen(true);
     setData(data);
   };
@@ -71,14 +70,14 @@ const Dashboard = () => {
                 <InputAdornment position="end">
                   {!changeIcon ? (
                     <PageviewIcon
-                      onClick={() => handleSearch(newsSearch)}
+                      onClick={() => handleSearchNews(newsSearch)}
                       color="primary"
                       fontSize="large"
                       sx={textAreaIconsHover}
                     />
                   ) : (
                     <ClearIcon
-                      onClick={() => handleClear()}
+                      onClick={() => handleClearSearchField()}
                       color="primary"
                       fontSize="large"
                       sx={textAreaIconsHover}
@@ -104,7 +103,7 @@ const Dashboard = () => {
             </NewsButton>
             <div>
               <NewsButton
-                onClick={() => changePage(true)}
+                onClick={() => getOlderNews(true)}
                 variant="contained"
                 fullWidth
                 sx={hoverColor}
@@ -112,7 +111,7 @@ const Dashboard = () => {
                 mais antigas
               </NewsButton>
               <NewsButton
-                onClick={() => changePage(null)}
+                onClick={() => getNewerNews()}
                 variant="contained"
                 fullWidth
                 sx={hoverColor}
@@ -138,7 +137,7 @@ const Dashboard = () => {
       </Grid>
       {sorted && <MoreNews/>}
       <Grid>
-        <FlightNewsList filterSearch={foundedNews} handleModal={handleModal} />
+        <FlightNewsList filterSearch={foundedNews} handleModal={handleOpenModal} />
         <NewsModal open={open} data={data} setOpen={setOpen} />
       </Grid>      
       {!sorted && <MoreNews/>}
