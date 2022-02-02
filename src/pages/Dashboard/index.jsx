@@ -11,6 +11,7 @@ import { Box, Button, Grid, TextField } from "@material-ui/core";
 import NewsModal from "../../components/NewsModal";
 import { useFlightNews } from "../../contexts/flightnews";
 import FlightNewsList from "../../components/FlightNewsList";
+import MoreNews from "../../components/MoreNews";
 import { NewsButton, GridStyle, RocketDiv, hoverColor } from "./styles";
 
 const Dashboard = () => {
@@ -40,9 +41,8 @@ const Dashboard = () => {
     setData(data);
   };
 
-  const handleMoreNews = () => {
-    moreNews();
-  };
+  
+
 
   return (
     <Grid sx={GridStyle}>
@@ -140,31 +140,12 @@ const Dashboard = () => {
         <h1>Space Flight News</h1>
         <hr />
       </Grid>
+      {sorted && <MoreNews/>}
       <Grid>
         <FlightNewsList filterSearch={foundedNews} handleModal={handleModal} />
         <NewsModal open={open} data={data} setOpen={setOpen} />
-      </Grid>
-      <Grid
-        sx={{
-          textAlign: "center",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          marginTop: 5,
-        }}
-      >
-        <Crop54TwoToneIcon />
-        <Crop54TwoToneIcon />
-        <Crop54TwoToneIcon />
-        <Button
-          onClick={() => handleMoreNews()}
-          sx={{ marginTop: 8, width: 100 }}
-          color="secondary"
-          variant="outlined"
-        >
-          mais
-        </Button>
-      </Grid>
+      </Grid>      
+      {!sorted && <MoreNews/>}
     </Grid>
   );
 };
