@@ -1,6 +1,6 @@
 import FlightNewsList from "../../components/FlightNewsList";
 import { useFlightNews } from "../../contexts/flightnews";
-import { NewsButton, GridStyle, RocketDiv } from "./styles";
+import { NewsButton, GridStyle, RocketDiv, hoverColor } from "./styles";
 import InputAdornment from "@mui/material/InputAdornment";
 import PageviewIcon from "@mui/icons-material/Pageview";
 import { Box, Button, Grid, TextField } from "@material-ui/core";
@@ -9,9 +9,11 @@ import { useState } from "react";
 import NewsModal from "../../components/NewsModal";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import Crop54TwoToneIcon from '@mui/icons-material/Crop54TwoTone';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const Dashboard = () => {
-  const { changePage, moreNews, sortNews } = useFlightNews();
+  const { changePage, moreNews, sortNews, sorted } = useFlightNews();
 
   const [newsSearch, setNewsSearch] = useState("");
   const [foundedNews, setFoundedNews] = useState("");
@@ -94,11 +96,8 @@ const Dashboard = () => {
               onClick={() => sortNews()}
               variant="contained"
               fullWidth
-              sx={{
-                "&:hover": {
-                  backgroundColor: "#302E53",
-                },
-              }}
+              endIcon={sorted ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+              sx={hoverColor}
             >
               Sort
             </NewsButton>
@@ -107,11 +106,7 @@ const Dashboard = () => {
                 onClick={() => changePage(true)}
                 variant="contained"
                 fullWidth
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "#302E53",
-                  },
-                }}
+                sx={hoverColor}
               >
                 mais antigas
               </NewsButton>
@@ -119,11 +114,7 @@ const Dashboard = () => {
                 onClick={() => changePage(null)}
                 variant="contained"
                 fullWidth
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "#302E53",
-                  },
-                }}
+                sx={hoverColor}
               >
                 mais novas
               </NewsButton>

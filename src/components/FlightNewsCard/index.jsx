@@ -1,5 +1,5 @@
 import { Box, Button, Grid } from "@material-ui/core";
-import { Div, ImgGrid, style, Title, TitleGrid, boxStyle } from "./styles";
+import { Div, ImgGrid, style, Title, TitleGrid, boxStyle, hoverColor } from "./styles";
 import format from "date-fns/format";
 
 const FlightNewsCard = ({ flightNews, handleModal, isOpen, index }) => {
@@ -24,9 +24,12 @@ const FlightNewsCard = ({ flightNews, handleModal, isOpen, index }) => {
             {!isOpen && (
               <Button
                 href={flightNews.url}
+                target='_blank'
+                rel='noopener noreferrer'
                 variant="contained"
                 color="primary"
                 size="small"
+                sx={hoverColor}
               >
                 news site
               </Button>
@@ -44,15 +47,20 @@ const FlightNewsCard = ({ flightNews, handleModal, isOpen, index }) => {
                 onClick={() => handle(flightNews)}
                 variant="contained"
                 size="small"
+                sx={hoverColor}
+                color="primary"
               >
                 ver mais
               </Button>
             ) : (
               <Button
                 href={flightNews.url}
+                target='_blank'
+                rel='noopener noreferrer'
                 variant="contained"
                 color="primary"
                 size="small"
+                sx={hoverColor}
               >
                 news site
               </Button>
