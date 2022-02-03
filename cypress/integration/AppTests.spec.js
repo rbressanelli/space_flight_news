@@ -7,17 +7,6 @@ context("AplicationTests", () => {
 
     cy.get("header").should("have.class", "css-io8shn");
     cy.get("footer").should("have.class", "css-sahwy8");
-
-    // cy.get("div").within(() => {
-    //   cy.get('div').should('have.class', 'css-1dzn5m3-MuiGrid-root')
-    //   cy.get('a').contains('news site').click()
-    // });
-
-    // cy.get("div").within(() => {
-    //   cy.get('div').should('have.class', 'css-b13pdf')
-    //   cy.get('button').contains('ver mais').click({force: true})
-
-    // });
   });
 
   it("Clicks on the button 'enter' to access the dashboard and see the navigation panel and the news", () => {
@@ -79,21 +68,22 @@ context("AplicationTests", () => {
     cy.get("button").contains("mais").click();
   });
 
-  it("Clicks on VER MAIS button view a modal with the news", () => {
-    // have to use force here because sometimes the test is to quicly and modal doesn't show in time
-    cy.get("div").within(() => {
-      cy.get("div").should("have.class", "css-b13pdf");
-      cy.get("button").contains("ver mais").click({ force: true });
-    });
-
-    // closes the modal
-    cy.get("body").click({setTimeout: 2});
-  });
-
   it("Clicks on the NEWS SITE button to view the original news site", () => {
     cy.get("div").within(() => {
       cy.get("div").should("have.class", "css-1dzn5m3-MuiGrid-root");
       cy.get("a").contains("news site").click();
     });
+  });
+
+  it("Clicks on VER MAIS button to view a modal with the news", () => {
+    // have to use force here because sometimes the test is to quicly and modal doesn't show in time
+    cy.get("div").within(() => {
+      cy.get("div").should("have.class", "css-b13pdf");
+      cy.get("button").contains("ver mais").click({ force: true });
+    });
+    cy.get("div")
+      .should("have.class", "MuiBox-root css-1qxhzwi")
+      .parent(".css-79ws1d-MuiModal-root")
+      .click();
   });
 });
