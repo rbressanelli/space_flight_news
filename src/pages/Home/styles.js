@@ -3,7 +3,7 @@ import { styled } from "@material-ui/system";
 export const style = {
   height: "100vh",
   position: "relative",
-  background: "rgba(71,110,145,0.50)",
+  background: "rgba(71,110,145,0.50)",  
 };
 
 export const VideoBackGround = styled("video")({
