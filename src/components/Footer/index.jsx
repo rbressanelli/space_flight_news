@@ -10,15 +10,15 @@ const Footer = () => {
     <HomeFooter>
       <div>
         <ul>
-          <li>Obtenha as últimas notícias sobre voos espaciais.</li>
-          <li>Novas informações publicadas diariamente.</li>
-          <li>Fotos, dados e links para as fontes originais.</li>
+          <li>- Obtenha as últimas notícias sobre voos espaciais reais.</li>
+          <li>- Novas informações publicadas diariamente.</li>
+          <li>- Fotos, dados e links para as fontes originais.</li>
         </ul>
-      </div>
+      </div>      
       <div>
         <ul>
-          <li>Informações:</li>
           <li>Autor: Roberto Bressanelli</li>
+          <li>-----------------------------------------</li>
         </ul>
         <div>
           <span>
