@@ -6,6 +6,7 @@ import Zoom from "@mui/material/Zoom";
 
 import { style, VideoBackGround, buttonStyle } from "./styles";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -27,7 +28,8 @@ const Home = () => {
             >
               Enter
             </Button>
-          </Grid>
+            <Footer />
+          </Grid>            
         </Grid>
       </Zoom>
     </>
