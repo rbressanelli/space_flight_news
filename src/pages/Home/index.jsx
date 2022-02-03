@@ -1,10 +1,10 @@
 import { Button, Grid } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-import Video from "../../assets/backgroundVideo.mp4";
 import Zoom from "@mui/material/Zoom";
 
 import { style, VideoBackGround, buttonStyle } from "./styles";
+import Video from "../../assets/backgroundVideo.mp4";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
