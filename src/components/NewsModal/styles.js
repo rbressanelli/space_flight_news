@@ -29,14 +29,14 @@ export const style = {
     width: "0.4em",
   },
   "&::-webkit-scrollbar-track": {
-    boxShadow: "inset 0 0 6px #D07017",
+    boxShadow: "inset 0 0 6px #302E53",
   },
   "&::-webkit-scrollbar-thumb": {
-    backgroundColor: "#D07017",
+    backgroundColor: "#302E53",
     outline: "1px solid #302E53",
     borderRadius: "10px",
     "&:hover": {
-      backgroundColor: "rgba(208,112,23,0.7)",
+      backgroundColor: "rgba(48,46,83,0.7)",
     },
   },
 };
