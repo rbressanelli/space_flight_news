@@ -5,15 +5,17 @@ import Video from "../../assets/backgroundVideo.mp4";
 import Zoom from "@mui/material/Zoom";
 
 import { style, VideoBackGround, buttonStyle } from "./styles";
+import Header from "../../components/Header";
 
 const Home = () => {
   const navigate = useNavigate();
 
   return (
     <>
-      <Zoom in timeout={2500}>
+      <Zoom in timeout={1500}>
         <Grid container sx={style}>
           <Grid item mobile={12}>
+          <Header />
             <VideoBackGround autoPlay loop muted id="video">
               <source src={Video} type="video/mp4" />
             </VideoBackGround>
