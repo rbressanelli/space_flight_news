@@ -33,7 +33,7 @@ context("AplicationTests", () => {
     // get the sort button
     cy.get("button").should(
       "have.class",
-      "css-i4e9y6-MuiButtonBase-root-MuiButton-root"
+      "MuiButtonBase-root css-jo58n5-MuiButtonBase-root-MuiButton-root"
     );
 
     // tests de sort button
@@ -56,23 +56,25 @@ context("AplicationTests", () => {
       // have to use force here for the same reason as before
       cy.get("div").within(() => {
         cy.get("svg")
-          .should("have.class", "css-179qdkp-MuiSvgIcon-root")
+          .should("have.class", "MuiSvgIcon-root css-179qdkp-MuiSvgIcon-root")
           .children();
         cy.get("path").click({ multiple: true, force: true });
       });
     });
   });
 
+  it("Clicks on the NEWS SITE button to view the original news site", () => {
+    cy.get("div").within(() => {
+      cy.get("div").should(
+        "have.class",
+        "MuiGrid-root MuiGrid-item css-1dzn5m3-MuiGrid-root"
+      );
+      cy.get("a").contains("news site").click();
+    });
+  });
   it("Clicks on the MAIS button to render another 10 results", () => {
     cy.get("button").contains("mais").click();
     cy.get("button").contains("mais").click();
-  });
-
-  it("Clicks on the NEWS SITE button to view the original news site", () => {
-    cy.get("div").within(() => {
-      cy.get("div").should("have.class", "css-1dzn5m3-MuiGrid-root");
-      cy.get("a").contains("news site").click();
-    });
   });
 
   it("Clicks on VER MAIS button to view a modal with the news", () => {
