@@ -1,4 +1,4 @@
-import { Box, Fade, Modal, Backdrop } from "@material-ui/core";
+import { Box, Fade, Modal, Backdrop, Typography } from "@material-ui/core";
 
 import FlightNewsCard from "../FlightNewsCard";
 import { style } from "./styles";
@@ -19,7 +19,9 @@ const NewsModal = ({ open, data, setOpen }) => {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <FlightNewsCard flightNews={data} isOpen={open} index="3" />
+            <Typography>
+              <FlightNewsCard flightNews={data} isOpen={open} index="3" />
+            </Typography>
           </Box>
         </Fade>
       </Modal>
