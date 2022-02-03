@@ -7,52 +7,34 @@ const MoreNews = () => {
 
   const handleMoreNews = () => {
     moreNews();
+    if (sorted) {
+      window.scrollTo(0, 0);
+    }
   };
 
   return (
     <>
-      {sorted ? (
-        <Grid
-          sx={{
-            textAlign: "center",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            marginTop: 5,
-          }}
+      <Grid
+        sx={{
+          textAlign: "center",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginTop: 5,
+        }}
+      >
+        <Crop54TwoToneIcon />
+        <Crop54TwoToneIcon />
+        <Crop54TwoToneIcon />
+        <Button
+          onClick={() => handleMoreNews()}
+          sx={{ margin: 3, width: 150 }}
+          color="secondary"
+          variant="outlined"
         >
-          <Button
-            onClick={() => handleMoreNews()}
-            sx={{ width: 150 }}
-            color="secondary"
-            variant="outlined"
-          >
-            mais
-          </Button>          
-        </Grid>
-      ) : (
-        <Grid
-          sx={{
-            textAlign: "center",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            marginTop: 5,
-          }}
-        >
-          <Crop54TwoToneIcon />
-          <Crop54TwoToneIcon />
-          <Crop54TwoToneIcon />
-          <Button
-            onClick={() => handleMoreNews()}
-            sx={{ margin: 3, width: 150 }}
-            color="secondary"
-            variant="outlined"
-          >
-            mais
-          </Button>
-        </Grid>
-      )}
+          mais
+        </Button>
+      </Grid>
     </>
   );
 };

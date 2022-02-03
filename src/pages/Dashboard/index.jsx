@@ -139,7 +139,7 @@ const Dashboard = () => {
           <h1>Space Flight News</h1>
           <hr />
         </Grid>
-        {sorted && <MoreNews />}
+
         <Grid>
           <FlightNewsList
             filterSearch={foundedNews}
@@ -147,7 +147,7 @@ const Dashboard = () => {
           />
           <NewsModal open={open} data={data} setOpen={setOpen} />
         </Grid>
-        {!sorted && <MoreNews />}
+        <MoreNews />
       </Grid>
     </Fade>
   );
