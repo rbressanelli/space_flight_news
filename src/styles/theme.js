@@ -12,6 +12,9 @@ export const theme = createTheme({
     blackPearl: {
       main: "#1e2022",
     },
+    text: {
+      primary: '#1e2022',
+    },
   },
 
   breakpoints: {

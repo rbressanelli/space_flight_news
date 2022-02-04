@@ -10,7 +10,7 @@ function App() {
     <>
       <CssBaseline />
       <ThemeProvider theme={theme}>
-        <Typography>
+        <Typography color='text.primary'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
