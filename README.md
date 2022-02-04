@@ -27,6 +27,15 @@ This is a challenge by <a href="https://coodesh.com/">Coodesh</a>.
 
 </br>
 
+
+<h2>Apresentação</h2>
+
+Link com a apresentação do aplicativo:
+<a href="https://www.loom.com/share/34227994f35b43dda8154adaa6a73a89">Apresentação</a>.
+
+</br>
+
+
 <h2 id="use">Como utilizar</h2>
 
 <h3><b>Home Page</b></h3>
@@ -55,11 +64,11 @@ Os mecanismos de busca funcionam da seguinte maneira:
 
 <h2>Instalação</h2>
 
-Quem quiser utilizar a aplicação poderá instalá-la em seu sistema local.
+Para utilizar a aplicação a mesma poderá ser instalada localmente.
 
 Para tanto existem algumas possibilidades:
 
-- Você poderá fazer o Fork do repositório original para o seu particular na página principal do projeto no GitHub e depois baixá-lo para sua máquina;
+- Poderá ser feito o Fork do repositório original para o seu particular na página principal do projeto no GitHub e depois baixá-lo para sua máquina;
 - Poderá ser feito o download de todo o código, também na página do projeto no GitHub;
 - A alternativa final seria fazer a clonagem do projeto para a sua máquina acessando as alternativas na página do projeto no GitHub.
 
@@ -74,19 +83,20 @@ Após o término da instalação digite o seguinte:
 <i>nome@nome:~/pastaDoProjeto$</i> <b>yarn start</b>
 
 <b>OBS1</b>: Caso o yarn não esteja instalado em seu sistema, recomenda-se acessar a página oficial para mais informações: [Yarn](https://yarnpkg.com/);</br>
-<b>OBS2</b>: Exemplos de comando a serem feitos emlinux. Os comandos do windows são semelhantes, mas caso ocorra algum erro favor acessar a página oficialdo [Yarn](https://yarnpkg.com/) para obter informações adicionais. 
+<b>OBS2</b>: Exemplos de comando a serem feitos em linux. Os comandos do windows são semelhantes, mas caso ocorra algum erro favor acessar a página oficial do [Yarn](https://yarnpkg.com/) para obter informações adicionais. 
 
 </br>
 
 <h2>Testes com o Cypress</h2>
 
 Para iniciar os testes com o Cypress são necessários os seguintes passos:
-- Abra o terminal na pasta raíz do projeto e rode o aplicativo com o comando <b>yarn start</b>;
+- Abra o terminal na pasta raíz do projeto e rode o aplicativo com o comando:</br>
+  <i>nome@nome:~/pastaDoProjeto$<i><b> yarn start</b>;
 - Abra um segundo terminal, também na pasta raíz, e rode o Cypress com o seguinte comando:
   <i>nome@nome:~/pastaDoProjeto$ <b> yarn run cypress open </b> 
 
 Uma janela do Cypress será aberta...no menu à esquerda basta clicar em <b>AppTests.spec.js</b>.</br>
-Os testes serão iniciados automaticamente em uma janela maior do navegador.
+Os testes serão iniciados automaticamente em uma janela do navegador.
 
 </br>
 
@@ -104,10 +114,12 @@ Projeto já finalizado e funcional
 <h2 id="tech">🛠 Tecnologias</h2>
 <ul>
   <li>React</li>
+  <li>Context API</li>
   <li>JavaScript</li> 
   <li>Material UI</li>
   <li>Axios</li>
   <li>React-Router-Dom</li>
+  <li>Vercel</li>
   <li>Cypress e2e test tool</li>
 </ul>
 
