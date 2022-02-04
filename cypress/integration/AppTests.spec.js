@@ -1,4 +1,5 @@
 context("AplicationTests", () => {
+
   it("Enter the home page and a video, a header, a footer and a button is exhibited", () => {
     cy.visit("http://localhost:3000");
 
@@ -8,6 +9,7 @@ context("AplicationTests", () => {
     cy.get("header").should("have.class", "css-io8shn");
     cy.get("footer").should("have.class", "css-sahwy8");
   });
+
 
   it("Clicks on the button 'enter' to access the dashboard and see the navigation panel and the news", () => {
     // verify button
@@ -22,6 +24,7 @@ context("AplicationTests", () => {
     // verify news array first value render
     cy.get("div").should("have.class", "css-1c202gl-MuiGrid-root");
   });
+
 
   it("Clicks on navigation panel buttons to search older news, newer news and sort news", () => {
     // tests the older news display functionality
@@ -42,8 +45,9 @@ context("AplicationTests", () => {
     cy.get("button").contains("Sort").click();
   });
 
+
   it("Writes a word in the search field, clicks on the search bitton to find the respectives news", () => {
-    // have to use force on line 73 because the cliked icon is removed from dom
+    // have to use force because the cliked icon is removed from dom
     cy.get("div").within(() => {
       cy.get("input").type("nasa");
       cy.get("svg")
@@ -51,6 +55,7 @@ context("AplicationTests", () => {
         .children();
       cy.get("path").click({ multiple: true, force: true });
     });
+
 
     it("After search, clicks on the button again to clear de search field and reset news", () => {
       // have to use force here for the same reason as before
@@ -63,6 +68,7 @@ context("AplicationTests", () => {
     });
   });
 
+
   it("Clicks on the NEWS SITE button to view the original news site", () => {
     cy.get("div").within(() => {
       cy.get("div").should(
@@ -72,13 +78,16 @@ context("AplicationTests", () => {
       cy.get("a").contains("news site").click();
     });
   });
+
+
   it("Clicks on the MAIS button to render another 10 results", () => {
     cy.get("button").contains("mais").click();
     cy.get("button").contains("mais").click();
   });
 
+
   it("Clicks on VER MAIS button to view a modal with the news", () => {
-    // have to use force here because sometimes the test is to quicly and modal doesn't show in time
+    // have to use force here because sometimes the test is too quicly and modal doesn't show in time
     cy.get("div").within(() => {
       cy.get("div").should("have.class", "css-b13pdf");
       cy.get("button").contains("ver mais").click({ force: true });
