@@ -11,6 +11,8 @@ export const NewsButton = styled(Button)({
   marginBottom: 10,
 });
 
+export const SortButton = styled(NewsButton)({});
+
 export const GridStyle = {
   p: 2,
   justifyContent: "center",
@@ -48,4 +50,13 @@ export const textAreaIconsHover = {
     color: "#302E53",
     cursor: "pointer",
   },
+};
+
+export const BoxStyle = {
+  display: "flex",
+  flexDirection: { mobile: "column", tablet: "row" },
+  maxWidth: 400,
+  margin: "0 auto",
+  position: { tablet: "absolute" },
+  right: { tablet: 0 },
 };

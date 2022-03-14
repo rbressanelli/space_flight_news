@@ -1,4 +1,4 @@
-import { ThemeProvider, Typography } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/core";
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
@@ -10,12 +10,10 @@ function App() {
     <>
       <CssBaseline />
       <ThemeProvider theme={theme}>
-        <Typography color='text.primary'>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-          </Routes>
-        </Typography>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
       </ThemeProvider>
     </>
   );
