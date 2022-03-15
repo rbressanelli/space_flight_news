@@ -11,6 +11,8 @@ export const NewsButton = styled(Button)({
   marginBottom: 10,
 });
 
+export const SortButton = styled(NewsButton)({});
+
 export const GridStyle = {
   p: 2,
   justifyContent: "center",
@@ -49,3 +51,26 @@ export const textAreaIconsHover = {
     cursor: "pointer",
   },
 };
+
+export const boxStyle = {
+  display: "flex",
+  flexDirection: { mobile: "column", tablet: "row" },
+  maxWidth: 400,
+  margin: "0 auto",
+  position: { tablet: "absolute" },
+  right: { tablet: 0 },
+};
+
+export const appTitleStyle = {
+  textAlign: "center",
+  m: 2,
+  display: { mobile: "none", tablet: "block" },
+};
+
+export const searchFieldStyle = {
+  margin: { mobile: "0 0 10px", tablet: "0 10px" },
+};
+
+export const searchGridStyle = {
+  margin: "0 auto", position: "relative"
+}

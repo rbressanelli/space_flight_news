@@ -17,6 +17,11 @@ import {
   RocketDiv,
   hoverColor,
   textAreaIconsHover,
+  boxStyle,
+  SortButton,
+  appTitleStyle,
+  searchFieldStyle,
+  searchGridStyle,
 } from "./styles";
 
 const Dashboard = () => {
@@ -49,24 +54,10 @@ const Dashboard = () => {
   return (
     <Fade in timeout={1000}>
       <Grid sx={GridStyle}>
-        <Grid
-          item
-          mobile={12}
-          tablet={8}
-          sx={{ margin: "0 auto", position: "relative" }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: { mobile: "column", tablet: "row" },
-              maxWidth: 400,
-              margin: "0 auto",
-              position: { tablet: "absolute" },
-              right: { tablet: 0 },
-            }}
-          >
+        <Grid item mobile={12} tablet={8} sx={searchGridStyle}>
+          <Box sx={boxStyle}>
             <TextField
-              sx={{ margin: { mobile: "0 0 10px", tablet: "0 10px" } }}
+              sx={searchFieldStyle}
               size="small"
               placeholder="Search"
               InputProps={{
@@ -96,7 +87,7 @@ const Dashboard = () => {
               onChange={(e) => setNewsSearch(e.target.value)}
             />
             <div>
-              <NewsButton
+              <SortButton
                 onClick={() => sortNews()}
                 variant="contained"
                 fullWidth
@@ -104,7 +95,7 @@ const Dashboard = () => {
                 sx={hoverColor}
               >
                 Sort
-              </NewsButton>
+              </SortButton>
               <div>
                 <NewsButton
                   onClick={() => getOlderNews(true)}
@@ -126,13 +117,7 @@ const Dashboard = () => {
             </div>
           </Box>
         </Grid>
-        <Grid
-          sx={{
-            textAlign: "center",
-            m: 2,
-            display: { mobile: "none", tablet: "block" },
-          }}
-        >
+        <Grid sx={appTitleStyle}>
           <RocketDiv>
             <RocketLaunchIcon id="rocket" />
           </RocketDiv>
