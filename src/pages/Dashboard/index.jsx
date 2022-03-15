@@ -21,7 +21,7 @@ import {
   SortButton,
   appTitleStyle,
   searchFieldStyle,
-  searchGridStyle
+  searchGridStyle,
 } from "./styles";
 
 const Dashboard = () => {
@@ -54,15 +54,8 @@ const Dashboard = () => {
   return (
     <Fade in timeout={1000}>
       <Grid sx={GridStyle}>
-        <Grid
-          item
-          mobile={12}
-          tablet={8}
-          sx={searchGridStyle}
-        >
-          <Box
-            sx={boxStyle}
-          >
+        <Grid item mobile={12} tablet={8} sx={searchGridStyle}>
+          <Box sx={boxStyle}>
             <TextField
               sx={searchFieldStyle}
               size="small"
@@ -124,9 +117,7 @@ const Dashboard = () => {
             </div>
           </Box>
         </Grid>
-        <Grid
-          sx={appTitleStyle}
-        >
+        <Grid sx={appTitleStyle}>
           <RocketDiv>
             <RocketLaunchIcon id="rocket" />
           </RocketDiv>
